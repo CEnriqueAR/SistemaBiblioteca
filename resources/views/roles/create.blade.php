@@ -1,12 +1,18 @@
 @extends('layouts.app-master')
 
 @section('content')
-    <div class="bg-light p-4 rounded">
-        <h1>Add new role</h1>
-        <div class="lead">
-            Add new role and assign permissions.
-        </div>
+   
+<div class="page-wrapper">
+        <div class="container-xl">
+          <!-- Page title -->
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <div class="col">
+              <h1>Crear Rol</h1>
 
+              </div>
+            </div>
+          </div>
         <div class="container mt-4">
 
             @if (count($errors) > 0)
@@ -23,7 +29,7 @@
             <form method="POST" action="{{ route('roles.store') }}">
                 @csrf
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Nombre</label>
                     <input value="{{ old('name') }}" 
                         type="text" 
                         class="form-control" 
@@ -31,13 +37,15 @@
                         placeholder="Name" required>
                 </div>
 
-                <label for="permissions" class="form-label">Assign Permissions</label>
-
-                <table class="table table-striped">
+                <label for="permissions" class="form-label">Asignar Permisos </label>
+                <div class="col-12">
+                <div class="card">
+                  <div class="table-responsive">
+                    <table class="table table-vcenter card-table table-striped">
                     <thead>
                         <th scope="col" width="1%"><input type="checkbox" name="all_permission"></th>
-                        <th scope="col" width="20%">Name</th>
-                        <th scope="col" width="1%">Guard</th> 
+                        <th scope="col" width="20%">Nombre</th>
+                        <th scope="col" width="1%">Guardado</th> 
                     </thead>
 
                     @foreach($permissions as $permission)
@@ -53,12 +61,14 @@
                         </tr>
                     @endforeach
                 </table>
-
-                <button type="submit" class="btn btn-primary">Save user</button>
-                <a href="{{ route('users.index') }}" class="btn btn-default">Back</a>
+                  </div></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Rol </button>
+                <a href="{{ route('roles.index') }}" class="btn btn-default">Regresar</a>
             </form>
         </div>
-
+        </div>
+</div>
     </div>
 @endsection
 

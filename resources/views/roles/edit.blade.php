@@ -1,12 +1,21 @@
 @extends('layouts.app-master')
 
 @section('content')
-    <div class="bg-light p-4 rounded">
-        <h1>Update role</h1>
-        <div class="lead">
-            Edit role and manage permissions.
-        </div>
 
+
+<div class="page-wrapper">
+        <div class="container-xl">
+          <!-- Page title -->
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <div class="col">
+              <h1>{{ ucfirst($role->name) }} Role</h1>
+
+              <h3> Permisos Asignados</h3>
+              </div>
+            </div>
+          </div>
+        
         <div class="container mt-4">
 
             @if (count($errors) > 0)
@@ -24,7 +33,7 @@
                 @method('patch')
                 @csrf
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Nombre</label>
                     <input value="{{ $role->name }}" 
                         type="text" 
                         class="form-control" 
@@ -34,11 +43,14 @@
 
                 <label for="permissions" class="form-label">Assign Permissions</label>
 
-                <table class="table table-striped">
+                <div class="col-12">
+                <div class="card">
+                  <div class="table-responsive">
+                    <table class="table table-vcenter card-table table-striped">
                     <thead>
                         <th scope="col" width="1%"><input type="checkbox" name="all_permission"></th>
-                        <th scope="col" width="20%">Name</th>
-                        <th scope="col" width="1%">Guard</th> 
+                        <th scope="col" width="20%">Nombre</th>
+                        <th scope="col" width="1%">Guardado</th> 
                     </thead>
 
                     @foreach($permissions as $permission)
@@ -57,13 +69,17 @@
                         </tr>
                     @endforeach
                 </table>
-
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                <a href="{{ route('roles.index') }}" class="btn btn-default">Back</a>
+                  </div>
+                
+            </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <a href="{{ route('roles.index') }}" class="btn btn-default">Regresar</a>
             </form>
         </div>
 
     </div>
+</div>
 @endsection
 
 @section('scripts')

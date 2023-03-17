@@ -6,7 +6,7 @@
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
       <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href=".">
-                <img src="img/ido.png" width="70px" height="70px">
+                <img src="{{ asset('img/ido.png')}}" width="70px" height="70px">
             </a>
         </h1>      </a>
 
