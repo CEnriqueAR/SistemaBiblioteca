@@ -1,12 +1,21 @@
 @extends('layouts.app-master')
 
 @section('content')
-    <div class="bg-light p-4 rounded">
-        <h2>Update Curso</h2>
-        <div class="lead">
-            Edit Curso.
-        </div>
+ 
+<div class="page-wrapper">
+        <div class="container-xl">
+          <!-- Page title -->
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <div class="col">
+                <h2 class="page-title">
+                Curso
+                </h2>
+                <a href="{{ route('curso.create') }}" class="btn btn-primary">Agregar Nuevo Curso</a>
 
+              </div>
+            </div>
+          </div>
         <div class="container mt-4">
 
             <form method="POST" action="{{ route('curso.update', $curso->id) }}">
@@ -33,5 +42,7 @@
             </form>
         </div>
 
+        </div>
+</div>
     </div>
 @endsection

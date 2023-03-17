@@ -1,11 +1,17 @@
 @extends('layouts.app-master')
 
 @section('content')
-    <div class="bg-light p-4 rounded">
-        <h2>Editar Permiso</h2>
-        <div class="lead">
-        </div>
+<div class="page-wrapper">
+        <div class="container-xl">
+          <!-- Page title -->
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <div class="col">
+              <h1>Permiso</h1>
 
+              </div>
+            </div>
+          </div>
         <div class="container mt-4">
 
             <form method="POST" action="{{ route('permissions.update', $permission->id) }}">
@@ -30,4 +36,5 @@
         </div>
 
     </div>
+</div>
 @endsection

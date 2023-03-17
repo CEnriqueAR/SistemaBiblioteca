@@ -33,11 +33,11 @@
                     </span>
               </a>
 
-              <div class="dropdown-menu">
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <a href="{{ route('users.index') }}" class="dropdown-item">Users</a>
                   <a href="{{ route('roles.index') }}" class="dropdown-item">Roles</a>
                   <a href="{{ route('area.index') }}" class="dropdown-item">Area</a>
-                  <a href="{{ route('categoria.index') }}" class="dropdownpdown-item">Categoria</a>
+                  <a href="{{ route('categoria.index') }}" class="dropdown-item">Categoria</a>
                   <a href="{{ route('curso.index') }}" class="dropdown-item">Curso</a>
                   <a href="{{ route('permissions.index') }}" class="dropdown-item">Permisos</a>
               </div>
